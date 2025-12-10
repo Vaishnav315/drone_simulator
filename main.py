@@ -79,7 +79,7 @@ async def ingest_feed(
 
         # 3. RUN AI (Inference)
         # conf=0.4: Only report if 40% sure
-        results = model(img_path, conf=0.4)
+        results = model(img_path, conf=0.4, imgsz=320)
         
         detections = []
         db = SessionLocal() if SessionLocal else None
